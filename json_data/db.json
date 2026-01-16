@@ -1,0 +1,313 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "Mayur",
+      "email": "mayur@123",
+      "mobile": "1223333333333",
+      "password": "11111"
+    },
+    {
+      "id": 2,
+      "name": "Pratik",
+      "email": "pratik@gmail.com",
+      "mobile": "1234567890",
+      "password": "55555"
+    },
+    {
+      "id": 3,
+      "name": "Nana",
+      "email": "nana@gmail.com",
+      "mobile": "1111222233",
+      "password": "nana"
+    },
+    {
+      "id": 4,
+      "name": "Pankaj",
+      "email": "pratik@gmail.com",
+      "mobile": "1234567890",
+      "password": "12345"
+    },
+    {
+      "id": 5,
+      "name": "Pankaj",
+      "email": "pankaj@gmail.com",
+      "mobile": "1234567890",
+      "password": "12345"
+    },
+    {
+      "name": "mmmm",
+      "email": "mmmm@gmail.com",
+      "mobile": "123412345",
+      "password": "1234",
+      "id": 6
+    },
+    {
+      "name": "Admin",
+      "email": "admin@gmail.com",
+      "mobile": "8600832098",
+      "password": "2098",
+      "id": 7
+    },
+    {
+      "name": "",
+      "email": "",
+      "mobile": "",
+      "password": "",
+      "id": 8
+    },
+    {
+      "name": "sss",
+      "email": "sss@gmail.com",
+      "mobile": "1234561234",
+      "password": "sss",
+      "id": 9
+    },
+    {
+      "name": "mayurrrrr",
+      "email": "mayurrr@gmail.com",
+      "mobile": "12345612345",
+      "password": "12345",
+      "id": 10
+    }
+  ],
+  "settings": [
+    {
+      "id": 1,
+      "siteName": "Coursera ",
+      "adminEmail": "admin@coursera.com",
+      "theme": "light",
+      "maintenance": false,
+      "themeColor": "red"
+    }
+  ],
+  "admins": [
+    {
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "mobile": "1234561234",
+      "password": "2098",
+      "id": 1
+    }
+  ],
+  "profile": [
+    {
+      "id": 1,
+      "name": "Admin User",
+      "email": "admin@coursera.com"
+    }
+  ],
+  "enrollments": [
+    {
+      "name": "Mayur",
+      "email": "mayur@123",
+      "phone": "1234567890",
+      "course": "React",
+      "level": "Beginner",
+      "createdAt": "2026-01-16T04:19:05.922Z",
+      "id": 1
+    },
+    {
+      "name": "nikhil",
+      "email": "nik21@gmail.com",
+      "phone": "1234567890",
+      "course": "Int:- React",
+      "level": "Intermediate",
+      "createdAt": "2026-01-16T04:35:42.843Z",
+      "id": 2
+    },
+    {
+      "name": "ddddddddd",
+      "email": "ddddddd@gmail.com",
+      "phone": "123123423",
+      "course": "Adv:- Advanced Java",
+      "level": "Advanced",
+      "createdAt": "2026-01-16T04:37:21.428Z",
+      "id": 3
+    },
+    {
+      "name": "fghj",
+      "email": "sss@gmail.com",
+      "phone": "12341234",
+      "course": "Beg:- Bootstrap",
+      "level": "Beginner",
+      "createdAt": "2026-01-16T05:02:01.011Z",
+      "id": 4
+    },
+    {
+      "name": "pankaj",
+      "email": "nik21@gmail.com",
+      "phone": "1234567890",
+      "course": "Int:- Java",
+      "level": "Intermediate",
+      "createdAt": "2026-01-16T05:07:42.175Z",
+      "id": 5
+    },
+    {
+      "name": "dddddd",
+      "email": "sss@gmail.com",
+      "phone": "12341234",
+      "course": "Adv:- Microservices",
+      "level": "Advanced",
+      "id": 6
+    },
+    {
+      "name": "mkk",
+      "email": "nmmm@gmail.com",
+      "phone": "78967889",
+      "course": "Beg:- Talwind",
+      "level": "Beginner",
+      "id": 7
+    },
+    {
+      "name": "dfghj",
+      "email": "ghj@gamil.com",
+      "phone": "678456756767",
+      "course": "Adv:- Advanced Java",
+      "level": "Advanced",
+      "id": 8
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "title": "React for Beginners",
+      "provider": "Meta",
+      "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800",
+      "active": true
+    },
+    {
+      "id": 2,
+      "title": "JavaScript Fundamentals",
+      "provider": "Google",
+      "image": "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800",
+      "active": true
+    },
+    {
+      "id": 3,
+      "title": "Full Stack Web Development",
+      "provider": "IBM",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800",
+      "active": true
+    },
+    {
+      "id": 4,
+      "title": "Python for Data Science",
+      "provider": "IBM",
+      "image": "https://images.unsplash.com/photo-1584697964403-9d9bbbeec2c2?w=800",
+      "active": true
+    },
+    {
+      "id": 5,
+      "title": "Machine Learning Basics",
+      "provider": "Google",
+      "image": "https://images.unsplash.com/photo-1527474305487-b87b222841cc?w=800",
+      "active": true
+    },
+    {
+      "id": 6,
+      "title": "Advanced React & Redux",
+      "provider": "Meta",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800",
+      "active": true
+    },
+    {
+      "id": 7,
+      "title": "Node.js & Express",
+      "provider": "IBM",
+      "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800",
+      "active": true
+    },
+    {
+      "id": 8,
+      "title": "MongoDB for Beginners",
+      "provider": "MongoDB",
+      "image": "https://images.unsplash.com/photo-1555949963-f8c9a3b3e8c2?w=800",
+      "active": true
+    },
+    {
+      "id": 9,
+      "title": "HTML & CSS Mastery",
+      "provider": "Meta",
+      "image": "https://images.unsplash.com/photo-1505685296765-3a2736de412f?w=800",
+      "active": true
+    },
+    {
+      "id": 10,
+      "title": "TypeScript Essentials",
+      "provider": "Microsoft",
+      "image": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=800",
+      "active": true
+    },
+    {
+      "id": 11,
+      "title": "Cloud Computing with AWS",
+      "provider": "Amazon",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800",
+      "active": true
+    },
+    {
+      "id": 12,
+      "title": "DevOps Fundamentals",
+      "provider": "IBM",
+      "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800",
+      "active": true
+    },
+    {
+      "id": 13,
+      "title": "UI/UX Design Basics",
+      "provider": "Google",
+      "image": "https://images.unsplash.com/photo-1559027615-5f8b5e6d1b9d?w=800",
+      "active": true
+    },
+    {
+      "id": 14,
+      "title": "Data Structures & Algorithms",
+      "provider": "Microsoft",
+      "image": "https://images.unsplash.com/photo-1517433456452-f9633a875f6f?w=800",
+      "active": true
+    },
+    {
+      "id": 15,
+      "title": "Cyber Security Essentials",
+      "provider": "Cisco",
+      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800",
+      "active": true
+    },
+    {
+      "id": 16,
+      "title": "Android App Development",
+      "provider": "Google",
+      "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800",
+      "active": true
+    },
+    {
+      "id": 17,
+      "title": "iOS Development with Swift",
+      "provider": "Apple",
+      "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800",
+      "active": true
+    },
+    {
+      "id": 18,
+      "title": "Artificial Intelligence Foundations",
+      "provider": "IBM",
+      "image": "https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=800",
+      "active": true
+    },
+    {
+      "id": 19,
+      "title": "Big Data Analytics",
+      "provider": "Oracle",
+      "image": "https://images.unsplash.com/photo-1517142089942-ba376ce32a0b?w=800",
+      "active": true
+    },
+    {
+      "id": 20,
+      "title": "Blockchain Fundamentals",
+      "provider": "Linux Foundation",
+      "image": "https://images.unsplash.com/photo-1620121692029-d088224ddc74?w=800",
+      "active": true
+    }
+  ]
+}

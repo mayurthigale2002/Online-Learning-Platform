@@ -1,0 +1,30 @@
+.footer-links li {
+  color: #adb5bd;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-links li:hover {
+  color: #ffc107;
+}
+
+.footer-icon {
+  font-size: 1.4rem;
+  color: #adb5bd;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.footer-icon:hover {
+  color: #ffc107;
+  transform: translateY(-3px);
+}
+.footer-bottom {
+  background-color: #212529;
+  color: #6c757d;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
