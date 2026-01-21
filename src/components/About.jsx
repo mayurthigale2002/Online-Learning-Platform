@@ -1,43 +1,39 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
 import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const About = () => {
-  
-    AOS.init();
-
-
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
 
   return (
-    <div className="text-light py-5"   style={{marginTop: "70px", background: "black"}}>
+    <div
+      className="text-light py-5"
+      style={{ marginTop: "70px", background: "black" }}
+    >
       <Container>
+
         <div className="text-center mb-5">
           <h6 className="section-subtitle">
             <span></span> ABOUT US <span></span>
           </h6>
+          <p className="text-white fs-5 mt-3">
+            Learn from the world’s best universities and companies
+          </p>
         </div>
-        <Row className="mb-5 text-center">
-          <Col>
-            
-            <p className="text-white fs-5">
-              Learn from the world’s best universities and companies
-            </p>
-          </Col>
-        </Row>
 
-              
-        <Row className="align-items-center mb-5"  data-aos="fade-up">
+        <Row className="align-items-center mb-5" data-aos="fade-up">
           <Col md={6}>
             <h1 className="fw-bold mb-3 text-secondary">Our Mission</h1>
             <p className="text-white">
-              Coursera’s mission is to provide universal access to the world’s
-              best education. We partner with leading universities and
-              organizations to offer online courses, certifications, and degree
-              programs that help learners grow personally and professionally.
+              Courseraa’s mission is to provide universal access to world-class
+              education through industry-aligned courses and certifications.
             </p>
             <p className="text-white">
-              Whether you want to advance your career, learn new skills, or
-              explore your passion, Coursera makes learning accessible,
-              flexible, and affordable.
+              We help learners gain real-world skills and confidence to succeed
+              in today’s fast-changing job market.
             </p>
           </Col>
 
@@ -49,66 +45,98 @@ const About = () => {
             />
           </Col>
         </Row>
-
-        <Row className="text-center mb-5" >
-          <Col md={3} data-aos="fade-right">
-            <Card className="bg-secondary text-light shadow border-0">
-              <Card.Body>
-                <h3 className="fw-bold text-warning">100M+</h3>
-                <p>Learners</p>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col md={3} data-aos="fade-right">
-            <Card className="bg-secondary text-light shadow border-0">
-              <Card.Body>
-                <h3 className="fw-bold text-warning">300+</h3>
-                <p>Universities</p>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col md={3}data-aos="fade-left">
-            <Card className="bg-secondary text-light shadow border-0">
-              <Card.Body>
-                <h3 className="fw-bold text-warning">10,000+</h3>
-                <p>Courses</p>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col md={3}data-aos="fade-left">
-            <Card className="bg-secondary text-light shadow border-0">
-              <Card.Body>
-                <h3 className="fw-bold text-warning">Professional</h3>
-                <p>Certificates</p>
-              </Card.Body>
-            </Card>
-          </Col>
+        <Row className="text-center mb-5">
+          {[
+            ["100M+", "Learners"],
+            ["300+", "Universities"],
+            ["10,000+", "Courses"],
+            ["Professional", "Certificates"],
+          ].map(([title, label], i) => (
+            <Col md={3} key={i} data-aos={i < 2 ? "fade-right" : "fade-left"}>
+              <Card className="bg-secondary text-light shadow border-0 h-100">
+                <Card.Body>
+                  <h3 className="fw-bold text-warning">{title}</h3>
+                  <p>{label}</p>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
         </Row>
 
         <Row className="mb-5" data-aos="fade-up">
           <Col>
-            <h2 className="fw-bold text-center mb-4">Our Partners</h2>
-            <p className="text-center text-secondary mb-4">
-              Learn from top universities and leading global companies
+            <h2 className="fw-bold text-center mb-3">Meet Our Mentors</h2>
+            <p className="text-center text-secondary mb-5">
+              Learn directly from experienced professionals & industry leaders
             </p>
 
-            <Row className="text-center">
-              <Col>Google</Col>
-              <Col>Meta</Col>
-              <Col>IBM</Col>
-              <Col>Microsoft</Col>
-              <Col>Amazon</Col>
+            <Row className="g-4">
+              {[
+                {
+                  name: "Rahul Sharma",
+                  role: "Senior Full Stack Developer",
+                  skill: "React • Node • AWS",
+                  img: "https://randomuser.me/api/portraits/men/32.jpg",
+                },
+                {
+                  name: "Anita Desai",
+                  role: "AI & Data Science Expert",
+                  skill: "Python • ML • AI",
+                  img: "https://randomuser.me/api/portraits/women/44.jpg",
+                },
+                {
+                  name: "Michael Brown",
+                  role: "Cloud & DevOps Architect",
+                  skill: "Azure • Docker • Kubernetes",
+                  img: "https://randomuser.me/api/portraits/men/65.jpg",
+                },
+                {
+                  name: "Sneha Patil",
+                  role: "UI/UX Designer",
+                  skill: "Figma • UX Research • Prototyping",
+                  img: "https://randomuser.me/api/portraits/women/68.jpg",
+                },
+                {
+                  name: "Arjun Mehta",
+                  role: "Cybersecurity Specialist",
+                  skill: "Ethical Hacking • Network Security",
+                  img: "https://randomuser.me/api/portraits/men/75.jpg",
+                },
+                {
+                  name: "Emily Watson",
+                  role: "Product Manager",
+                  skill: "Agile • Scrum • Roadmapping",
+                  img: "https://randomuser.me/api/portraits/women/52.jpg",
+                },
+              ].map((mentor, i) => (
+                <Col md={4} key={i} data-aos="zoom-in">
+                  <Card className="mentor-card h-100 text-center border-0 shadow">
+                    <Card.Body>
+                      <img
+                        src={mentor.img}
+                        alt={mentor.name}
+                        className="rounded-circle mb-3 mentor-img"
+                      />
+                      <h5 className="fw-bold">{mentor.name}</h5>
+                      <p className="text-warning mb-1">{mentor.role}</p>
+                      <p className="text-white-50">{mentor.skill}</p>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              ))}
             </Row>
           </Col>
         </Row>
 
         <Row className="text-center">
           <Col>
-            <h1 className="fw-bold mb-3 mt-4 text-success fw-bold">Our Vision</h1>
-            <p className="text-white-50 text-center mx-auto mt-4 fs-5" style={{width:"70%"}}>
-              We believe learning is the source of human progress. Our goal is
-              to empower learners around the world to achieve their dreams
-              through high-quality online education.
+            <h1 className="fw-bold mb-3 mt-4 text-success">Our Vision</h1>
+            <p
+              className="text-white-50 mx-auto mt-4 fs-5"
+              style={{ width: "70%" }}
+            >
+              To create a global learning ecosystem where anyone can gain
+              skills, transform careers, and unlock new opportunities.
             </p>
           </Col>
         </Row>

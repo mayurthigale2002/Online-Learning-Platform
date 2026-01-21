@@ -214,3 +214,166 @@
 
 /* Menu button */
 
+.course-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+/* Glass effect */
+.glass,
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(90deg, #0dcaf0, #ffc107);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Course hover */
+.course-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.course-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Steps */
+.step-circle {
+  width: 60px;
+  height: 60px;
+  background: #0dcaf0;
+  color: #000;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+/* Gradient background */
+.bg-gradient {
+  background: linear-gradient(135deg, #0d6efd, #000);
+}
+
+
+/* About page */
+
+.mentor-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mentor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.5);
+}
+
+.mentor-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 3px solid #0dcaf0;
+}
+
+
+
+/* Login page */
+
+/* Background */
+.login-bg {
+  background: linear-gradient(135deg, #0d6efd, #000);
+}
+
+/* Left section */
+.login-left {
+  background: linear-gradient(
+    135deg,
+    rgba(13, 110, 253, 0.9),
+    rgba(0, 0, 0, 0.9)
+  );
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(90deg, #0d6efd, #ffc107);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Button */
+.login-btn {
+  background: linear-gradient(90deg, #0d6efd, #0dcaf0);
+  border: none;
+}
+
+.login-btn:hover {
+  opacity: 0.9;
+}
+
+
+input::placeholder {
+  font-size: 0.9rem;
+}
+
+
+
+/* NAvbar */
+
+/* Gradient text for brand */
+.gradient-text {
+  background: linear-gradient(90deg, #0dcaf0, #ffc107);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+/* Logo wrapper with shadow and rounded */
+.logo-wrapper {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-wrapper:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar link hover animation */
+.nav-animate {
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-animate::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: blue;
+  transition: 0.3s;
+}
+
+.nav-animate:hover::after {
+  width: 100%;
+}

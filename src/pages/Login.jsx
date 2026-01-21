@@ -1,123 +1,125 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
-const Login = () => {
+import AOS from "aos";
+import "aos/dist/aos.css";
 
+const Login = () => {
   const navigate = useNavigate();
 
+  const [users, setUsers] = useState([]);
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
 
-  const [fetchData, setFetchData] = useState([]);
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+    fetchUsers();
+  }, []);
 
-  const getData =async () => {
-    try{
-      const result = await axios.get("http://localhost:3000/posts")
-        setFetchData(result.data)
-
-        console.log(result.data);
-
-    }catch(err){
+  const fetchUsers = async () => {
+    try {
+      const res = await axios.get("http://localhost:3000/posts");
+      setUsers(res.data);
+    } catch (err) {
       console.log(err);
     }
   };
-  const SunmitHand = (e) => {
-    e.preventDefault();
 
-    const user = fetchData.find((item=> item.email === formData.email && item.password === formData.password)
-
-    );
-   if (user) {
-  alert("Login Successful");
-
-  // store login status
-  localStorage.setItem("isAuth", "true");
-
-  navigate("/");
-} else {
-  alert("Invalid Credentials");
-}
-
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-   useEffect(()=>{
-      getData();
-   },[] )
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
+    const user = users.find(
+      (u) =>
+        u.email === formData.email && u.password === formData.password
+    );
 
-
-
-
-
-// -------------------------------------------------------------------------------------------------------------------
-  const [formData, setFormData] = useState({
-    email: "",
-    password: ""
-  });
-
-  const handlerData = (e) => {
-    setFormData({...formData,[e.target.name]:e.target.value})
-    console.log(formData);
-    
-  }
-
-
+    if (user) {
+      localStorage.setItem("isAuth", "true");
+      alert("Login Successful 🎉");
+      navigate("/");
+    } else {
+      alert("Invalid Email or Password ❌");
+    }
+  };
 
   return (
-    <Container className="d-flex align-items-center justify-content-center min-vh-100 ">
+    <Container fluid className="login-bg min-vh-100 d-flex align-items-center">
       <Row className="w-100 justify-content-center">
-        <Col md={6} lg={5}>
-          <Card className="shadow-lg border-0 rounded-4">
-            <Card.Body className="p-4">
-              <h2 className="text-center fw-bold mb-4 text-primary">
-                Welcome Back
-              </h2>
-
-              <Form onSubmit={(e)=>SunmitHand(e)}>
-                <Form.Group className="mb-3">
-                  <Form.Label>Email address</Form.Label>
-                  <Form.Control
-                    type="email"
-                    placeholder="Enter your email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={(e)=>handlerData(e)}
-                  />
-                </Form.Group>
-
-                <Form.Group className="mb-4">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control
-                    type="password"
-                    placeholder="Enter your password"
-                    id="password"
-                    name="password"
-                    required
-                    value={formData.password}
-                    onChange={(e)=>handlerData(e)}
-                  />
-                </Form.Group>
-
-                <Button
-                  variant="primary"
-                  type="submit"
-                  className="w-100 fw-semibold py-2 rounded-3"
-                  onSubmit={(e)=>SubmitHand(e)}
-                >
-                  Login
-                </Button>
-
-                <p className="text-center mt-3 text-muted">
-                  Don’t have an account?{" "}
-                  <span className="text-primary fw-semibold cursor-pointer">
-                    <NavLink to="/signup">Sign up</NavLink>
-                  </span>
+        <Col lg={9}>
+          <Card className="border-0 shadow-lg overflow-hidden rounded-4">
+            <Row className="g-0">
+              <Col
+                md={6}
+                className="d-none d-md-flex flex-column justify-content-center align-items-center text-white login-left"
+                data-aos="fade-right"
+              >
+                <h1 className="fw-bold mb-3">Welcome Back 👋</h1>
+                <p className="text-center px-4">
+                  Login to continue learning, explore new courses, and grow
+                  your career with us.
                 </p>
-              </Form>
-            </Card.Body>
+              </Col>
+
+              <Col md={6} data-aos="fade-left">
+                <Card.Body className="p-5">
+                  <h2 className="fw-bold text-center mb-4 gradient-text">
+                    Login Account
+                  </h2>
+
+                  <Form onSubmit={handleSubmit}>
+                    <Form.Group className="mb-3">
+                      <Form.Label>Email</Form.Label>
+                      <Form.Control
+                        type="email"
+                        placeholder="Enter your email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="rounded-3"
+                      />
+                    </Form.Group>
+
+                    <Form.Group className="mb-4">
+                      <Form.Label>Password</Form.Label>
+                      <Form.Control
+                        type="password"
+                        placeholder="Enter your password"
+                        name="password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                        className="rounded-3"
+                      />
+                    </Form.Group>
+
+                    <Button
+                      type="submit"
+                      className="w-100 py-2 fw-bold rounded-3 login-btn"
+                    >
+                      Login
+                    </Button>
+
+                    <p className="text-center mt-4 text-muted">
+                      Don’t have an account?{" "}
+                      <NavLink
+                        to="/signup"
+                        className="fw-semibold text-decoration-none text-primary"
+                      >
+                        Sign Up
+                      </NavLink>
+                    </p>
+                  </Form>
+                </Card.Body>
+              </Col>
+            </Row>
           </Card>
         </Col>
       </Row>

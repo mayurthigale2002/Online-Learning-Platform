@@ -10,22 +10,25 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem("isAuth");
     navigate("/login");
-    alert("logout successfully");
+    alert("Logout successful!");
   };
-
 
   return (
     <nav className="navbar navbar-expand-lg custom-navbar fixed-top">
       <div className="container">
         <NavLink to="/" className="navbar-brand d-flex align-items-center">
-          <img
-            src={logoo}
-            alt="Logo"
-            width="42"
-            height="42"
-            className="me-2 logo-img"
-          />
-          <h3 className="nav-text text-white-50 mb-0">Courseraa</h3>
+          <div className="logo-wrapper d-flex align-items-center p-1 rounded-circle shadow-sm">
+            <img
+              src={logoo}
+              alt="Logo"
+              width="35"
+              height="35"
+              className="logo-img"
+            />
+          </div>
+          <div className="ms-2">
+            <h3 className="nav-text gradient-text mb-0">Courseraa</h3>
+          </div>
         </NavLink>
 
         <button
@@ -36,7 +39,6 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto align-items-center mx-auto gap-3">
             <li className="nav-item">
@@ -44,54 +46,49 @@ const Navbar = () => {
                 Home
               </NavLink>
             </li>
-
             <li className="nav-item">
               <NavLink to="/about" className="nav-link nav-animate">
                 About
               </NavLink>
             </li>
-
             <li className="nav-item">
               <NavLink to="/contact" className="nav-link nav-animate">
                 Contact
               </NavLink>
             </li>
-
             <li className="nav-item">
               <NavLink to="/learning" className="nav-link nav-animate me-3">
                 Learning
               </NavLink>
             </li>
           </ul>
-
           <Dropdown>
             <Dropdown.Toggle
               id="dropdown-basic"
-              className="icon-dropdown bg-dark border-2"
+              className="icon-dropdown bg-dark border-2 rounded-pill"
             >
-              Menu
-              <i className="fa-solid fa-bars ms-2"></i>
+              Menu <i className="fa-solid fa-bars ms-2"></i>
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
               <Dropdown.Item as={NavLink} to="/login">
-                <button className="btn btn-primary btn-sm px-3 w-100">
+                <button className="btn btn-secondary btn-sm px-3 w-100">
                   User Login
                 </button>
               </Dropdown.Item>
               <Dropdown.Item as={NavLink} to="/studentEnrollment">
-                <button className="btn btn-success btn-sm px-3 w-100">
+                <button className="btn btn-secondary btn-sm px-3 w-100">
                   Enrollment Form
                 </button>
               </Dropdown.Item>
               <Dropdown.Item as={NavLink} to="/admin">
-                <button className="btn btn-warning btn-sm px-3 w-100">
+                <button className="btn btn-secondary btn-sm px-3 w-100">
                   Admin Login
                 </button>
               </Dropdown.Item>
               <Dropdown.Item>
                 <button
-                  className="btn btn-danger btn-sm px-3 w-100"
+                  className="btn btn-secondary btn-sm px-3 w-100"
                   onClick={handleLogout}
                 >
                   Logout
