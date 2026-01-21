@@ -75,7 +75,7 @@ const AdminPanel = () => {
               onClick={() => setActiveTab("enrollments")}
             >
                <i className="fa-solid fa-users me-2 ms-3"></i>
-              USER ENROLLMENTS
+              ADMIN ENROLLMENTS
             </button>
           </li>
 

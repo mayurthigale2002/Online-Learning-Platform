@@ -25,7 +25,7 @@ const Navbar = () => {
             height="42"
             className="me-2 logo-img"
           />
-          <h3 className="nav-text text-warning mb-0">Courseraa</h3>
+          <h3 className="nav-text text-white-50 mb-0">Courseraa</h3>
         </NavLink>
 
         <button

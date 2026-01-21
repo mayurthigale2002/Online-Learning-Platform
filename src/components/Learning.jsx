@@ -8,7 +8,7 @@ const Learning = () => {
       AOS.init()
   return (
     <>
-      {/* Hero Section */}
+
       <div
         className="py-5 text-white text-center"
         style={{marginTop: "70px", background: "black"}}
@@ -35,7 +35,6 @@ const Learning = () => {
         </Container>
       </div>
 
-      {/* Features Section */}
       <Container className="py-5">
         <Row className="text-center mb-4">
           <Col>
@@ -92,7 +91,6 @@ const Learning = () => {
         </Row>
       </Container>
 
-      {/* Call to Action */}
       <div className="py-5 text-center text-white"  style={{marginTop: "70px", background: "black"}} >
         <Container >
           <h3 className="fw-bold" >Start Learning Without Limits</h3>
