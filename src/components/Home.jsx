@@ -196,7 +196,7 @@ const Home = () => {
 
       <section className="py-5 text-center bg-secondary">
         <Container>
-          <h2 className="fw-bold">Ready to Start Your Journey? 🚀</h2>
+          <h2 className="fw-bold">Ready to Start Your Journey? </h2>
           <p>Learn. Build. Get Certified.</p>
           <Button
             size="lg"

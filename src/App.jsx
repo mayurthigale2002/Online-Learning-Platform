@@ -49,7 +49,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/learning" element={<Learning />} />
-          <Route path="/studentEnrollment" element={<StudentEnrollment/>} />
+          <Route path="/studentEnrollment" element={<StudentEnrollment />} />
 
           {/* Dashboard */}
           <Route path="/admin" element={<Admin />} />
@@ -60,7 +60,6 @@ const App = () => {
           <Route path="/analyticsdash" element={<AnalyticsDash />} />
           <Route path="/coursedash" element={<CourseDash />} />
           <Route path="/adminenrollments" element={<AdminEnrollments />} />
-
 
           {/* Protected  */}
           <Route
