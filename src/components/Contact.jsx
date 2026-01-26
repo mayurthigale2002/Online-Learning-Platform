@@ -4,24 +4,34 @@ import "../index.css";
 import AOS from "aos";
 
 const Contact = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
-      AOS.init()
-        
+  const handleSubmit = (e) => {
+    e.preventDefault(); 
+    alert("Your message has been submitted successfully!"); 
+    e.target.reset();
+  };
+
   return (
-    <section className="contact-section py-5 text-white " style={{marginTop: "70px", background: "black"}} >
+    <section
+      className="contact-section py-5 text-white"
+      style={{ marginTop: "70px", background: "black" }}
+    >
       <Container>
         <div className="text-center mb-5">
           <h6 className="section-subtitle">
             <span></span> CONTACT US <span></span>
           </h6>
           <p className="text-white fs-5 mt-5">
-              Get In Touch and Contact For Any Query to companies.
-            </p>
+            Get In Touch and Contact For Any Query to companies.
+          </p>
         </div>
 
-        <Row className="g-4 mb-4 text-center" >
-          <Col md={4}data-aos="fade-right" >
-              <i className="bi bi-geo-alt-fill info-icon"></i>
+        <Row className="g-4 mb-4 text-center">
+          <Col md={4} data-aos="fade-right">
+            <i className="bi bi-geo-alt-fill info-icon"></i>
             <div className="item d-flex align-items-center justify-content-center">
               <div>
                 <h3 className="text-warning">Office</h3>
@@ -31,7 +41,7 @@ const Contact = () => {
           </Col>
 
           <Col md={4} data-aos="fade-up">
-              <i className="bi bi-telephone-fill info-icon"></i>
+            <i className="bi bi-telephone-fill info-icon"></i>
             <div className="item d-flex align-items-center justify-content-center">
               <div>
                 <h3 className="text-warning">Mobile</h3>
@@ -41,34 +51,36 @@ const Contact = () => {
           </Col>
 
           <Col md={4} data-aos="fade-left">
-              <i className="bi bi-envelope-fill info-icon"></i>
+            <i className="bi bi-envelope-fill info-icon"></i>
             <div className="item d-flex align-items-center justify-content-center">
               <div>
                 <h3 className="text-warning">Email </h3>
-                <p className="text-primary"> mayur@gmail.com</p>
+                <p className="text-primary">mayur@gmail.com</p>
               </div>
             </div>
           </Col>
         </Row>
 
-        <Row className="justify-content-center mt-5" data-aos="fade-up" >
+        <Row className="justify-content-center mt-5" data-aos="fade-up">
           <Col lg={8}>
-            <Form className="contact-form">
+            <Form className="contact-form" onSubmit={handleSubmit}>
               <Row className="g-3">
                 <Col md={6}>
-                  <Form.Control type="text" placeholder="Your Name" />
+                  <Form.Control type="text" placeholder="Your Name" required />
                 </Col>
                 <Col md={6}>
-                  <Form.Control type="email" placeholder="Your Email" />
+                  <Form.Control type="email" placeholder="Your Email" required />
                 </Col>
                 <Col md={12}>
-                  <Form.Control type="text" placeholder="Subject" />
+                  <Form.Control type="text" placeholder="Subject" required />
                 </Col>
                 <Col md={12}>
-                  <Form.Control as="textarea" rows={6} placeholder="Message" />
+                  <Form.Control as="textarea" rows={6} placeholder="Message" required />
                 </Col>
                 <Col md={12}>
-                  <Button className="send-btn w-100">Send Message</Button>
+                  <Button type="submit" className="send-btn w-100">
+                    Send Message
+                  </Button>
                 </Col>
               </Row>
             </Form>
@@ -89,8 +101,6 @@ const Contact = () => {
             </div>
           </Col>
         </Row>
-
-        
       </Container>
     </section>
   );

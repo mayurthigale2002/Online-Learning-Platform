@@ -23,7 +23,7 @@ const Courses = () => {
 
 
       <div className="row mb-4">
-        <div className="col-md-6">
+        <div className="col-md-6 mb-4">
           <input
             type="text"
             className="form-control"
@@ -32,7 +32,7 @@ const Courses = () => {
           />
         </div>
 
-        <div className="col-md-4">
+        <div className="col-md-4 mb-4">
           <select
             className="form-select"
             onChange={(e) => setProvider(e.target.value)}
@@ -49,7 +49,7 @@ const Courses = () => {
      
 
 
-      <div className="col-md-2">
+      <div className="col-md-2 mb-4">
       <button
                 className="btn btn-info fw-bold"
                 onClick={() => navigate("/studentEnrollment")}
@@ -68,8 +68,12 @@ const Courses = () => {
             provider={course.provider}
             image={course.image}
           />
+          
         ))}
+        
       </div>
+
+      
     </div>
   );
 };

@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import BigCourse from "./BegCourse";
+
 
 const StudentEnrollment = () => {
+  const navigate = useNavigate();
+
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -10,6 +16,8 @@ const StudentEnrollment = () => {
     course: "",
     level: "",
   });
+
+
 
   const handleChange = (e) => {
     const { name, value, type } = e.target;
@@ -113,7 +121,7 @@ const StudentEnrollment = () => {
                     />
                   </Col>
                 </Row>
-                <Form.Select
+                {/* <Form.Select
                   className="mb-3"
                   name="course"
                   value={formData.course}
@@ -134,9 +142,9 @@ const StudentEnrollment = () => {
                   <option>Adv:- System Design</option>
                   <option>Adv:- Microservices</option>
                   <option>Adv:- Advanced Java</option>
-                </Form.Select>
+                </Form.Select> */}
 
-                <Button type="submit" className="w-100 rounded-pill">
+                <Button type="submit" className="w-100 rounded-pill" onClick={() => navigate("/coursevideo")}>
                   Enroll Now
                 </Button>
               </Form>

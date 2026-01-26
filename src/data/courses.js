@@ -5,6 +5,7 @@ const courses = [
     provider: "Meta",
     image:
       "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80",
+      youtubeLink: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
   {
     id: 2,

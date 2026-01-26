@@ -32,6 +32,15 @@ import SettingDash from "./components/adminDashbord/SettingDash";
 import AnalyticsDash from "./components/adminDashbord/AnalyticsDash";
 import CourseDash from "./components/adminDashbord/CourseDash";
 import AdminEnrollments from "./components/adminDashbord/AdminEnrollments";
+import BigCourse from "./pages/BegCourse";
+
+// user dash
+import Dashbord from "./components/userDashbord/Dashbord";
+import Profile from "./components/userDashbord/Profile";
+import CourseCards from "./pages/CourseCards";
+import CourseVideo from "./pages/CourseVideo";
+
+
 
 const App = () => {
   return (
@@ -50,6 +59,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/learning" element={<Learning />} />
           <Route path="/studentEnrollment" element={<StudentEnrollment />} />
+          <Route path="/coursevideo" element={<CourseVideo />} />
 
           {/* Dashboard */}
           <Route path="/admin" element={<Admin />} />
@@ -60,6 +70,12 @@ const App = () => {
           <Route path="/analyticsdash" element={<AnalyticsDash />} />
           <Route path="/coursedash" element={<CourseDash />} />
           <Route path="/adminenrollments" element={<AdminEnrollments />} />
+          <Route path="/bigcourse" element={<BigCourse/>} />
+          
+          {/* user dash */}
+          <Route path="/dashbord" element={<Dashbord />} />
+          <Route path="/profile" element={<Profile />} />
+
 
           {/* Protected  */}
           <Route
@@ -67,6 +83,15 @@ const App = () => {
             element={
               <ProtectedRoute>
                 <Courses />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/coursecards"
+            element={
+              <ProtectedRoute>
+                <CourseCards />
               </ProtectedRoute>
             }
           />

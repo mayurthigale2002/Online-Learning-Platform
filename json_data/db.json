@@ -83,6 +83,20 @@
       "mobile": "12345623456",
       "password": "11111",
       "id": 12
+    },
+    {
+      "name": "asd",
+      "email": "asd@gmail.com",
+      "mobile": "123123234",
+      "password": "asd",
+      "id": 13
+    },
+    {
+      "name": "aash",
+      "email": "aash@gmail.com",
+      "mobile": "123451234",
+      "password": "aash",
+      "id": 14
     }
   ],
   "settings": [
@@ -180,6 +194,86 @@
       "course": "Adv:- Advanced Java",
       "level": "Advanced",
       "id": 8
+    },
+    {
+      "name": "aash",
+      "email": "aash@gmail.com",
+      "phone": "12312345",
+      "course": "Int:- Node.js",
+      "level": "Intermediate",
+      "id": 9
+    },
+    {
+      "name": "Mayur",
+      "email": "mayur@123",
+      "phone": "1234123423",
+      "course": "Int:- Node.js",
+      "level": "Intermediate",
+      "id": 10
+    },
+    {
+      "name": "Mayur",
+      "email": "mayur@123",
+      "phone": "1234567890",
+      "course": "Beg:- CSS",
+      "level": "Beginner",
+      "id": 11
+    },
+    {
+      "name": "Mayur",
+      "email": "mayur@123",
+      "phone": "1234567890",
+      "course": "Int:- Python",
+      "level": "Intermediate",
+      "id": 12
+    },
+    {
+      "name": "Mayur",
+      "email": "mayur@123",
+      "phone": "1234567890",
+      "course": "Beg:- HTML",
+      "level": "Beginner",
+      "id": 13
+    },
+    {
+      "name": "Mayur",
+      "email": "mayur@123",
+      "phone": "1234567890",
+      "course": "Int:- Java",
+      "level": "Intermediate",
+      "id": 14
+    },
+    {
+      "name": "eeee",
+      "email": "sss@gmail.com",
+      "phone": "12312345",
+      "course": "Int:- React",
+      "level": "Intermediate",
+      "id": 15
+    },
+    {
+      "name": "Mayur",
+      "email": "mayur@123",
+      "phone": "1234567890",
+      "course": "Beg:- CSS",
+      "level": "Beginner",
+      "id": 16
+    },
+    {
+      "name": "Mayur",
+      "email": "mayur@123",
+      "phone": "1234567890",
+      "course": "Int:- Node.js",
+      "level": "Intermediate",
+      "id": 17
+    },
+    {
+      "name": "Mayur",
+      "email": "mayur@123",
+      "phone": "1234567890",
+      "course": "Int:- Node.js",
+      "level": "Intermediate",
+      "id": 18
     }
   ],
   "courses": [

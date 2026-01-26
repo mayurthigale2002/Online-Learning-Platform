@@ -3,9 +3,11 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import logoo from "../assets/logoo.webp";
 import "../index.css";
+// import mylogoo from "../assets/mylogoo.png";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const isAuth = localStorage.getItem("isAuth");
 
   const handleLogout = () => {
     localStorage.removeItem("isAuth");
@@ -31,14 +33,6 @@ const Navbar = () => {
           </div>
         </NavLink>
 
-        <button
-          className="navbar-toggler border-0"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto align-items-center mx-auto gap-3">
             <li className="nav-item">
@@ -56,12 +50,8 @@ const Navbar = () => {
                 Contact
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink to="/learning" className="nav-link nav-animate me-3">
-                Learning
-              </NavLink>
-            </li>
           </ul>
+
           <Dropdown>
             <Dropdown.Toggle
               id="dropdown-basic"
@@ -71,29 +61,44 @@ const Navbar = () => {
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-              <Dropdown.Item as={NavLink} to="/login">
-                <button className="btn btn-secondary btn-sm px-3 w-100">
-                  User Login
-                </button>
-              </Dropdown.Item>
+              {!isAuth && (
+                <Dropdown.Item as={NavLink} to="/login">
+                  <button className="btn btn-secondary btn-sm px-3 w-100">
+                    User Login
+                  </button>
+                </Dropdown.Item>
+              )}
+
+              {isAuth && (
+                <Dropdown.Item as={NavLink} to="/dashbord">
+                  <button className="btn btn-secondary btn-sm px-3 w-100">
+                    User Dashboard
+                  </button>
+                </Dropdown.Item>
+              )}
+
               <Dropdown.Item as={NavLink} to="/studentEnrollment">
                 <button className="btn btn-secondary btn-sm px-3 w-100">
                   Enrollment Form
                 </button>
               </Dropdown.Item>
+
               <Dropdown.Item as={NavLink} to="/admin">
                 <button className="btn btn-secondary btn-sm px-3 w-100">
                   Admin Login
                 </button>
               </Dropdown.Item>
-              <Dropdown.Item>
-                <button
-                  className="btn btn-secondary btn-sm px-3 w-100"
-                  onClick={handleLogout}
-                >
-                  Logout
-                </button>
-              </Dropdown.Item>
+
+              {isAuth && (
+                <Dropdown.Item>
+                  <button
+                    className="btn btn-secondary btn-sm px-3 w-100"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </button>
+                </Dropdown.Item>
+              )}
             </Dropdown.Menu>
           </Dropdown>
         </div>
@@ -103,3 +108,6 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
