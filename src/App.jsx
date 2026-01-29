@@ -41,13 +41,11 @@ import CourseVideo from "./pages/CourseVideo";
 import ScrollToTop from "./components/ScrollToTop";
 import NotFound from "./components/NotFound";
 
-
-
 const App = () => {
   return (
     <>
       <BrowserRouter>
-      <ScrollToTop />
+        <ScrollToTop />
         <Navbar />
 
         <Routes>
@@ -70,12 +68,11 @@ const App = () => {
           <Route path="/analyticsdash" element={<AnalyticsDash />} />
           <Route path="/coursedash" element={<CourseDash />} />
           <Route path="/adminenrollments" element={<AdminEnrollments />} />
-          <Route path="/bigcourse" element={<BigCourse/>} />
-          
+          <Route path="/bigcourse" element={<BigCourse />} />
+
           {/* user dash */}
           <Route path="/dashbord" element={<Dashbord />} />
           <Route path="/profile" element={<Profile />} />
-
 
           {/* Protected  */}
           <Route
@@ -141,8 +138,7 @@ const App = () => {
             }
           />
 
-        <Route path="*" element={<NotFound />} />
-
+          <Route path="*" element={<NotFound />} />
         </Routes>
 
         <Footer />
