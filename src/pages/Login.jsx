@@ -36,12 +36,14 @@ const Login = () => {
     e.preventDefault();
 
     const user = users.find(
-      (u) =>
-        u.email === formData.email && u.password === formData.password
+      (u) => u.email === formData.email && u.password === formData.password,
     );
 
     if (user) {
       localStorage.setItem("isAuth", "true");
+
+      localStorage.setItem("userId", user.id);
+      localStorage.setItem("userName", user.name);
       alert("Login Successful 🎉");
       navigate("/");
     } else {
@@ -62,14 +64,14 @@ const Login = () => {
               >
                 <h1 className="fw-bold mb-3">Welcome Back 👋</h1>
                 <p className="text-center px-4">
-                  Login to continue learning, explore new courses, and grow
-                  your career with us.
+                  Login to continue learning, explore new courses, and grow your
+                  career with us.
                 </p>
               </Col>
 
               <Col md={6} data-aos="fade-left">
                 <Card.Body className="p-5">
-                  <h2 className="fw-bold text-center mb-4 gradient-text">
+                  <h2 className="fw-bold text-center mb-4 ">User
                     Login Account
                   </h2>
 

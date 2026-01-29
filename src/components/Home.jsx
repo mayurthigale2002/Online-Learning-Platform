@@ -81,7 +81,7 @@ const Home = () => {
       <section className="py-5 text-white">
         <Container>
           <Row className="text-center mb-5">
-            <h2 className="fw-bold gradient-text">Why Learn With Courseraa?</h2>
+            <h2 className="">Why Learn With CourseWala's?</h2>
             <p className="text-warning">
               Career-focused, flexible & practical learning
             </p>
@@ -152,7 +152,8 @@ const Home = () => {
       <section className="py-5 text-white">
         <Container>
           <Row className="text-center mb-5">
-            <h2 className="fw-bold gradient-text">How It Works</h2>
+            <h2 className="fw-bold">How It Works</h2>
+            <p className="text-warning">Steps to follow us..</p>
           </Row>
 
           <Row className="g-4 text-center">

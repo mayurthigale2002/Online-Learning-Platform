@@ -234,7 +234,6 @@
 /* Gradient text */
 .gradient-text {
   background: linear-gradient(90deg, #0dcaf0, #ffc107);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -310,7 +309,6 @@
 /* Gradient text */
 .gradient-text {
   background: linear-gradient(90deg, #0d6efd, #ffc107);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -336,7 +334,6 @@ input::placeholder {
 /* Gradient text for brand */
 .gradient-text {
   background: linear-gradient(90deg, #0dcaf0, #ffc107);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
 }

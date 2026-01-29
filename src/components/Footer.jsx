@@ -50,7 +50,7 @@ const Footer = () => {
         <Row className=" align-items-center">
           <Col md={12}>
             <p className="mb-0 text-secondary mx-auto text-center">
-              © {new Date().getFullYear()} Courseraa. All rights reserved.
+              © {new Date().getFullYear()} CourseWala's. All rights reserved.
             </p>
           </Col>
         </Row>

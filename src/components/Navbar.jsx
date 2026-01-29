@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import logoo from "../assets/logoo.webp";
 import "../index.css";
-// import mylogoo from "../assets/mylogoo.png";
+import cw from "../assets/cw.png";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const Navbar = () => {
         <NavLink to="/" className="navbar-brand d-flex align-items-center">
           <div className="logo-wrapper d-flex align-items-center p-1 rounded-circle shadow-sm">
             <img
-              src={logoo}
+              src={cw}
               alt="Logo"
               width="35"
               height="35"
@@ -29,12 +29,12 @@ const Navbar = () => {
             />
           </div>
           <div className="ms-2">
-            <h3 className="nav-text gradient-text mb-0">Courseraa</h3>
+            <h3 className="nav-text mb-0 text-secondary fw-bold">CourseWala's</h3>
           </div>
         </NavLink>
 
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto align-items-center mx-auto gap-3">
+        <div className="navbar-collapse collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto align-items-center mx-auto gap-3 ">
             <li className="nav-item">
               <NavLink to="/" className="nav-link nav-animate">
                 Home
@@ -55,7 +55,7 @@ const Navbar = () => {
           <Dropdown>
             <Dropdown.Toggle
               id="dropdown-basic"
-              className="icon-dropdown bg-dark border-2 rounded-pill"
+              className="icon-dropdown bg-dark border-2 rounded-pill "
             >
               Menu <i className="fa-solid fa-bars ms-2"></i>
             </Dropdown.Toggle>

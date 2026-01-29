@@ -28,7 +28,7 @@ const About = () => {
           <Col md={6}>
             <h1 className="fw-bold mb-3 text-secondary">Our Mission</h1>
             <p className="text-white">
-              Courseraa’s mission is to provide universal access to world-class
+              CourseWala's’s mission is to provide universal access to world-class
               education through industry-aligned courses and certifications.
             </p>
             <p className="text-white">

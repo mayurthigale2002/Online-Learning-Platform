@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { toast } from "react-toastify";
 
 const Admin = () => {
   const navigate = useNavigate();
@@ -28,13 +27,13 @@ const Admin = () => {
       );
 
       if (admin) {
-        toast.success("Admin Login Successful 🔐");
+        alert("Admin Login Successful ");
         navigate("/adminpanel");
       } else {
-        toast.error("Invalid Email or Password ❌");
+        alert("Invalid Email or Password ");
       }
     } catch (err) {
-      toast.error("Server Error 🚫");
+      alert("Server Error ");
     }
   };
 
@@ -101,7 +100,7 @@ const Admin = () => {
                 </Form>
 
                 <div className="text-center mt-4 text-muted small">
-                  © 2026 Courseraa Admin Panel
+                  © 2026 CourseWala's Admin Panel
                 </div>
               </Card.Body>
             </Card>

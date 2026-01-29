@@ -1,94 +1,125 @@
 
-import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Card, Table } from "react-bootstrap";
-import axios from "axios";
+import React from "react";
+import { Card, Container, Row, Col, Button, Badge } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const Dashbord = () => {
-  const [userInfo, setUserInfo] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    // Fetch data from your API
-    axios.get("http://localhost:3000/posts")
-      .then((response) => {
-        // Assuming the API returns a single user object, adjust if it's an array
-        setUserInfo(response.data[0]); // If response.data is an array of users
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-        setLoading(false);
-      });
-  }, []);
+  const userName = localStorage.getItem("userName");
 
-  if (loading) {
-    return <p className="text-center mt-5">Loading...</p>;
-  }
 
-  if (!userInfo) {
-    return <p className="text-center mt-5">No user data found.</p>;
+  if (!userName ) {
+    return <p className="text-center mt-5">User not logged in</p>;
   }
 
   return (
-    <Container style={{ marginTop: "100px" }}>
-      {/* Profile Header */}
-      <Card className="mb-4 p-4 shadow-sm">
-        <Row className="align-items-center">
-          <Col xs={12} md={3} className="text-center">
-            <img
-              src={"https://via.placeholder.com/120"}
-              alt="Profile"
-              className="rounded-circle border border-primary"
-            />
-          </Col>
-          <Col xs={12} md={9}>
-            <h2>{userInfo.name}</h2>
-            <p className="text-muted">{userInfo.bio}</p>
-          </Col>
-        </Row>
-      </Card>
-
-      {/* Info Table */}
-      <Card className="mb-4 shadow-sm">
-        <Card.Body>
-          <h5>User Information</h5>
-          <Table striped bordered hover responsive>
-            <tbody>
-              <tr>
-                <td>Name</td>
-                <td>{userInfo.name}</td>
-              </tr>
-              <tr>
-                <td>Email</td>
-                <td>{userInfo.email}</td>
-              </tr>
-              <tr>
-                <td>Phone</td>
-                <td>{userInfo.mobile}</td>
-              </tr>
-            </tbody>
-          </Table>
-        </Card.Body>
-      </Card>
+    <Container fluid className="pt-5" style={{ marginTop: "80px" }}>
+      {/* Welcome Section */}
+      <Row className="justify-content-center mb-4">
+        <Col md={8}>
+          <Card
+            className="border-0 shadow-lg text-white"
+            style={{
+              background: "linear-gradient(135deg, #667eea, #764ba2)",
+              borderRadius: "20px",
+            }}
+          >
+            <Card.Body className="p-4 text-center">
+              <h2 className="fw-bold">Welcome back, {userName} 👋</h2>
+              <p className="mb-0">Keep learning, you’re doing great</p>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
 
       {/* Stats Section */}
-      <Row>
-        <Col md={4} className="mb-3">
-          <Card className="text-center shadow-sm p-3">
-            <h5>Courses</h5>
-            <p className="h4">{userInfo.courses}</p>
+      <Row className="justify-content-center mb-4">
+        <Col md={8}>
+          <Row className="g-3">
+            <Col md={4}>
+              <Card className="shadow-sm text-center h-100">
+                <Card.Body>
+                  <h5 className="fw-bold">My Courses</h5>
+                  <h2 className="text-primary">5</h2>
+                  <Badge bg="success">Enrolled</Badge>
+                </Card.Body>
+              </Card>
+            </Col>
+
+            <Col md={4}>
+              <Card className="shadow-sm text-center h-100">
+                <Card.Body>
+                  <h5 className="fw-bold">My Progress</h5>
+                  <h2 className="text-warning">68%</h2>
+                  <Badge bg="warning">In Progress</Badge>
+                </Card.Body>
+              </Card>
+            </Col>
+
+            <Col md={4}>
+              <Card className="shadow-sm text-center h-100">
+                <Card.Body>
+                  <h5 className="fw-bold">My Certificates</h5>
+                  <h2 className="text-success">2</h2>
+                  <Badge bg="primary">Completed</Badge>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+
+      {/* Profile Section */}
+      <Row className="justify-content-center mb-4">
+        <Col md={8}>
+          <Card className="shadow-sm">
+            <Card.Body>
+              <h5 className="fw-bold mb-3">👤 Profile Information</h5>
+              <p className="mb-1">
+                <strong>Name:</strong> {userName}
+              </p>
+              <p className="mb-0">
+                <strong>Role:</strong> User
+              </p>
+            </Card.Body>
           </Card>
         </Col>
-        <Col md={4} className="mb-3">
-          <Card className="text-center shadow-sm p-3">
-            <h5>Completed</h5>
-            <p className="h4">{userInfo.completed}</p>
-          </Card>
-        </Col>
-        <Col md={4} className="mb-3">
-          <Card className="text-center shadow-sm p-3">
-            <h5>Progress</h5>
-            <p className="h4">{userInfo.progress}</p>
+      </Row>
+
+      {/* Quick Actions */}
+      <Row className="justify-content-center">
+        <Col md={8}>
+          <Card className="shadow-sm">
+            <Card.Body className="text-center">
+              <h5 className="fw-bold mb-3"> Quick Actions</h5>
+              <Button
+                variant="primary"
+                className="me-2 rounded-pill"
+                onClick={() => navigate("/courses")}
+              >
+                My Courses
+              </Button>
+
+              <Button
+                variant="outline-primary"
+                className="me-2 rounded-pill"
+                onClick={() => navigate("/coursevideo")}
+              >
+                Continue Learning
+              </Button>
+
+              <Button
+                variant="danger"
+                className="rounded-pill"
+                onClick={() => {
+                  localStorage.clear();
+                  navigate("/login");
+                }}
+              >
+                Logout
+              </Button>
+            </Card.Body>
           </Card>
         </Col>
       </Row>

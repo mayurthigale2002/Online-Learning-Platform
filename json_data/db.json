@@ -97,12 +97,19 @@
       "mobile": "123451234",
       "password": "aash",
       "id": 14
+    },
+    {
+      "name": "abc",
+      "email": "abc@gmail.com",
+      "mobile": "1234567890",
+      "password": "12345",
+      "id": 15
     }
   ],
   "settings": [
     {
       "id": 1,
-      "siteName": "Coursera ",
+      "siteName": "Cours",
       "adminEmail": "admin@coursera.com",
       "theme": "light",
       "maintenance": false,
@@ -274,6 +281,13 @@
       "course": "Int:- Node.js",
       "level": "Intermediate",
       "id": 18
+    },
+    {
+      "name": "Mayur",
+      "email": "mayur@123",
+      "phone": "1234567890",
+      "level": "Intermediate",
+      "id": 19
     }
   ],
   "courses": [
