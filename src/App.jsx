@@ -39,6 +39,7 @@ import Profile from "./components/userDashbord/Profile";
 import CourseCards from "./pages/CourseCards";
 import CourseVideo from "./pages/CourseVideo";
 import ScrollToTop from "./components/ScrollToTop";
+import NotFound from "./components/NotFound";
 
 
 
@@ -139,6 +140,9 @@ const App = () => {
               </ProtectedRoute>
             }
           />
+
+        <Route path="*" element={<NotFound />} />
+
         </Routes>
 
         <Footer />
