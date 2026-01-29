@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ToastContainer } from "react-bootstrap";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 // components
@@ -39,15 +38,15 @@ import Dashbord from "./components/userDashbord/Dashbord";
 import Profile from "./components/userDashbord/Profile";
 import CourseCards from "./pages/CourseCards";
 import CourseVideo from "./pages/CourseVideo";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 
 const App = () => {
   return (
     <>
-      {/* Toast Container */}
-      <ToastContainer position="top-right" autoClose={3000} theme="colored" />
       <BrowserRouter>
+      <ScrollToTop />
         <Navbar />
 
         <Routes>

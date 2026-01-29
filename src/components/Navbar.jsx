@@ -1,9 +1,8 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
-import logoo from "../assets/logoo.webp";
 import "../index.css";
-import cw from "../assets/cw.png";
+import elogo from "../assets/elogo.webp";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -19,40 +18,52 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg custom-navbar fixed-top">
       <div className="container">
         <NavLink to="/" className="navbar-brand d-flex align-items-center">
-          <div className="logo-wrapper d-flex align-items-center p-1 rounded-circle shadow-sm">
-            <img
-              src={cw}
-              alt="Logo"
-              width="35"
-              height="35"
-              className="logo-img"
-            />
+          <div className="logo-wrapper">
+            <img src={elogo} alt="Logo" className="logo-img" />
           </div>
-          <div className="ms-2">
-            <h3 className="nav-text mb-0 text-secondary fw-bold">CourseWala's</h3>
+
+          <div className="ms-2 brand-text">
+            <h3 className="mb-0 brand-title">CourseWala’s</h3>
           </div>
         </NavLink>
 
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
         <div className="navbar-collapse collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto align-items-center mx-auto gap-3 ">
-            <li className="nav-item">
+            <li className="nav-item ">
               <NavLink to="/" className="nav-link nav-animate">
+               <i className="fa-solid fa-house me-2 "></i>
                 Home
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink to="/about" className="nav-link nav-animate">
+              <i className="fa-solid fa-user-circle me-2"></i>
                 About
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink to="/contact" className="nav-link nav-animate">
+              <i className="fa-solid fa-phone me-2"></i>
                 Contact
               </NavLink>
             </li>
           </ul>
 
-          <Dropdown>
+
+          <div className="d-flex justify-content-center mt-3 mt-lg-0">
+          <Dropdown >
             <Dropdown.Toggle
               id="dropdown-basic"
               className="icon-dropdown bg-dark border-2 rounded-pill "
@@ -101,6 +112,7 @@ const Navbar = () => {
               )}
             </Dropdown.Menu>
           </Dropdown>
+          </div>
         </div>
       </div>
     </nav>
@@ -108,6 +120,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-

@@ -14,7 +14,7 @@ const Dashbord = () => {
   }
 
   return (
-    <Container fluid className="pt-5" style={{ marginTop: "80px" }}>
+    <Container fluid className="pt-5 bg-dark" style={{ marginTop: "70px" }}>
       {/* Welcome Section */}
       <Row className="justify-content-center mb-4">
         <Col md={8}>
@@ -90,7 +90,7 @@ const Dashbord = () => {
       {/* Quick Actions */}
       <Row className="justify-content-center">
         <Col md={8}>
-          <Card className="shadow-sm">
+          <Card className="shadow-sm mb-4">
             <Card.Body className="text-center">
               <h5 className="fw-bold mb-3"> Quick Actions</h5>
               <Button
