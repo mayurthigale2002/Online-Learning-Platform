@@ -1,16 +1,149 @@
-# React + Vite
+🎓 CourseWala's – Online Learning Platform
+A modern full-stack online learning platform inspired by Coursera.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📌 Overview
+CourseWala's is a web-based online learning platform designed to provide users with structured courses, skill-based education, and a seamless learning experience.
+The project focuses on secure authentication, role-based access control, course management, and responsive UI design using modern web technologies.
+This project demonstrates strong full-stack development skills including frontend, backend, API integration, and database management.
 
-Currently, two official plugins are available:
+🚀 Live Demo
+🔗 deployed link here :-
+https://onlinelearning-kohl.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✨ Features
+🔐 Authentication System
+User Registration & Login
+Password validation
+Protected Routes
 
-## React Compiler
+👤 Role-Based Access Control
+Admin Dashboard
+Instructor Panel
+Student Dashboard
+Permission-based content visibility
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+📚 Course Management
+Browse Courses
+View Course Details
+Enroll in Courses
+Add / Update / Delete Courses (Admin)
 
-## Expanding the ESLint configuration
+📊 Dashboard Features
+User Management (Admin)
+Course Management
+Analytics-ready structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+📱 Responsive Design
+Mobile-friendly UI
+Modern clean layout
+Smooth navigation experience
+
+🛠️ Tech Stack
+Frontend
+React.js
+React Router DOM
+Axios
+Tailwind CSS / Bootstrap
+
+Backend
+Database
+JSON Server
+Tools & Deployment
+Git & GitHub
+Vercel / Render
+Postman (API Testing)
+
+📂 Folder Structure
+Here is a clean and professional folder structure for your Courseraa project:
+
+CourseWala's/
+│
+├── client/                         # Frontend (React)
+│   ├── public/
+│   │   └── index.html
+│   │
+│   ├── src/
+│   │   ├── assets/                 # Images, icons, static files
+│   │   ├── components/             # Reusable components
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   └── ProtectedRoute.jsx
+│   │   │
+│   │   ├── pages/                  # Page components
+│   │   │   ├── Home.jsx
+│   │   │   ├── About.jsx
+│   │   │   ├── Courses.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── Register.jsx
+│   │   │   └── Dashboard.jsx
+│   │   │
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
+│   │
+│   └── package.json
+│
+├── server/                         # Backend (json)
+│   ├── config/
+│   │   └── db.js
+│   │
+│   ├── models/
+│   │   ├── User.js
+│   │   └── Course.js
+│   │
+│   ├── routes/
+│   │   ├── authRoutes.js
+│   │   └── courseRoutes.js
+│   │
+│   ├── server.js
+│   └── package.json
+│
+├── .gitignore
+├── README.md
+└── package.json
+
+⚙️ Installation Guide
+1️⃣ Clone the Repository
+git clone https://github.com/mayurthigale2002/Online-Learning-Platform
+cd courseWala's
+
+2️⃣ Setup Backend
+cd server
+npm install
+npm run dev
+
+3️⃣ Setup Frontend
+cd client
+npm install
+npm run dev
+
+🔮 Future Enhancements
+
+Payment Integration (Razorpay/Stripe)
+Video Streaming Support
+Course Progress Tracking
+Instructor Course Upload
+Reviews & Ratings System
+Dark Mode
+
+🏆 Learning Outcomes
+
+This project demonstrates:
+Full-Stack Development
+REST API Creation
+Authentication & Authorization
+Role-Based Access Control
+CRUD Operations
+Responsive UI Development
+Deployment Process
+
+👨‍💻 Author
+
+Mayur Thigale
+Full Stack Developer
+
+🔗 GitHub: https://github.com/mayurthigale2002
+
+📜 License
+
+This project is created for educational and portfolio purposes.
