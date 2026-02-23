@@ -93,7 +93,7 @@ const AdminPanel = () => {
             </button>
           </li>
 
-          <li className="mb-4">
+          {/* <li className="mb-4">
             <button
               className={`btn w-100 text-start ${
                 activeTab === "settings"
@@ -105,7 +105,7 @@ const AdminPanel = () => {
               <i className="fa-solid fa-gear me-2 ms-3"></i>
               SETTINGS
             </button>
-          </li>
+          </li> */}
 
         </ul>
       </div>

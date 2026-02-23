@@ -330,6 +330,13 @@
       "phone": "123456",
       "level": "Beginner",
       "id": 23
+    },
+    {
+      "name": "Mayur",
+      "email": "mayur@123",
+      "phone": "12341234",
+      "level": "Intermediate",
+      "id": 24
     }
   ],
   "courses": [
