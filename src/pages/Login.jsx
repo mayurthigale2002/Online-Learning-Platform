@@ -4,6 +4,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -44,10 +45,10 @@ const Login = () => {
 
       localStorage.setItem("userId", user.id);
       localStorage.setItem("userName", user.name);
-      alert("Login Successful 🎉");
+      toast.success("Login Successful 🎉");
       navigate("/");
     } else {
-      alert("Invalid Email or Password ❌");
+      toast.error("Invalid Email or Password ❌");
     }
   };
 

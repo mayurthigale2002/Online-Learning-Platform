@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { Toaster } from "react-hot-toast";
 
 // components
 import Home from "./components/Home";
@@ -47,6 +48,18 @@ const App = () => {
       <BrowserRouter>
         <ScrollToTop />
         <Navbar />
+
+        <Toaster
+          position="top-right"
+          reverseOrder={false}
+          toastOptions={{
+            duration: 2000,
+            style: {
+              background: "#333",
+              color: "#fff",
+            },
+          }}
+        />
 
         <Routes>
           {/* Public */}

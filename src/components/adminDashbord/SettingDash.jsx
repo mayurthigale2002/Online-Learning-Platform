@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 
 const SettingDash = () => {
@@ -41,7 +42,7 @@ const SettingDash = () => {
       if (savedData && savedData.id) {
 
         await axios.put(`http://localhost:3000/settings/${savedData.id}`, formData);
-        alert("Settings updated successfully!");
+        toast.success("Settings updated successfully!");
       } else {
 
         const res = await axios.post("http://localhost:3000/settings", formData);
@@ -50,7 +51,7 @@ const SettingDash = () => {
       }
     } catch (err) {
       console.log(err);
-      alert("Failed to save settings.");
+      toast.success("Failed to save settings.");
     }
   };
 

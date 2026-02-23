@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const UserDash = () => {
   const [users, setUsers] = useState([]);
@@ -25,9 +26,9 @@ const UserDash = () => {
     try {
       await axios.delete(`http://localhost:3000/posts/${id}`);
       setUsers(users.filter((user) => user.id !== id));
-      alert("User deleted successfully");
+      toast.success("User deleted successfully");
     } catch (error) {
-      alert("Delete failed");
+      toast.error("Delete failed");
     }
   };
 

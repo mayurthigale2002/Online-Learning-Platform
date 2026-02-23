@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "../index.css";
 import AOS from "aos";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   useEffect(() => {
@@ -10,7 +11,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault(); 
-    alert("Your message has been submitted successfully!"); 
+    toast.success("Your message has been submitted successfully!"); 
     e.target.reset();
   };
 

@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import "../index.css";
 import elogo from "../assets/elogo.webp";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem("isAuth");
     navigate("/login");
-    alert("Logout successful!");
+    toast.success("Logout successful!");
   };
 
   return (
@@ -88,11 +89,13 @@ const Navbar = () => {
                 </Dropdown.Item>
               )}
 
+              {isAuth && (
               <Dropdown.Item as={NavLink} to="/studentEnrollment">
                 <button className="btn btn-secondary btn-sm px-3 w-100">
                   Enrollment Form
                 </button>
               </Dropdown.Item>
+  )}
 
               <Dropdown.Item as={NavLink} to="/admin">
                 <button className="btn btn-secondary btn-sm px-3 w-100">

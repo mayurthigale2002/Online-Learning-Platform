@@ -3,6 +3,7 @@ import axios from "axios";
 import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
 import { NavLink, useNavigate } from "react-router-dom";
 import "../index.css"; 
+import toast from "react-hot-toast";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ const Signup = () => {
     try {
       await axios.post("http://localhost:3000/posts", formData);
       setFormData({ name: "", email: "", mobile: "", password: "" });
+      toast.success("Signup Successfully..!")
       navigate("/login");
     } catch (err) {
       console.log(err);

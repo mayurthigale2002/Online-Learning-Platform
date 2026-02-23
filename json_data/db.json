@@ -50,13 +50,6 @@
       "id": 7
     },
     {
-      "name": "",
-      "email": "",
-      "mobile": "",
-      "password": "",
-      "id": 8
-    },
-    {
       "name": "sss",
       "email": "sss@gmail.com",
       "mobile": "1234561234",
@@ -111,6 +104,20 @@
       "mobile": "12345236",
       "password": "me",
       "id": 16
+    },
+    {
+      "name": "mau",
+      "email": "mau@gamil.com",
+      "mobile": "12343123",
+      "password": "mau",
+      "id": 17
+    },
+    {
+      "name": "mb",
+      "email": "mb@gmail.com",
+      "mobile": "123456780",
+      "password": "mb",
+      "id": 18
     }
   ],
   "settings": [
@@ -302,6 +309,27 @@
       "phone": "08600832098",
       "level": "Intermediate",
       "id": 20
+    },
+    {
+      "name": "Mayur",
+      "email": "mayur@123",
+      "phone": "123456",
+      "level": "Beginner",
+      "id": 21
+    },
+    {
+      "name": "Mayur",
+      "email": "mayur@123",
+      "phone": "1234567890",
+      "level": "Intermediate",
+      "id": 22
+    },
+    {
+      "name": "Mayur",
+      "email": "mayur@123",
+      "phone": "123456",
+      "level": "Beginner",
+      "id": 23
     }
   ],
   "courses": [
