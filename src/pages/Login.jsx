@@ -9,7 +9,6 @@ import toast from "react-hot-toast";
 const Login = () => {
   const navigate = useNavigate();
 
-  const [users, setUsers] = useState([]);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -17,38 +16,39 @@ const Login = () => {
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
-    fetchUsers();
   }, []);
-
-  const fetchUsers = async () => {
-    try {
-      const res = await axios.get("http://localhost:3000/posts");
-      setUsers(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const user = users.find(
-      (u) => u.email === formData.email && u.password === formData.password,
-    );
+    try {
+      const res = await axios.get(
+        `https://698c204a21a248a273608bc4.mockapi.io/users?email=${formData.email}&password=${formData.password}`
+      );
 
-    if (user) {
-      localStorage.setItem("isAuth", "true");
+      if (res.data.length > 0) {
+        const user = res.data[0];
 
-      localStorage.setItem("userId", user.id);
-      localStorage.setItem("userName", user.name);
-      toast.success("Login Successful 🎉");
-      navigate("/");
-    } else {
-      toast.error("Invalid Email or Password ❌");
+        // Store login info
+        localStorage.setItem("isAuth", "true");
+        localStorage.setItem("userId", user.id);
+        localStorage.setItem("userName", user.name);
+        localStorage.setItem("userEmail", user.email);
+
+        toast.success("Login Successful 🎉");
+
+        // Redirect
+        navigate("/");
+      } else {
+        toast.error("Invalid Email or Password ❌");
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Server Error ❌");
     }
   };
 
@@ -72,8 +72,8 @@ const Login = () => {
 
               <Col md={6} data-aos="fade-left">
                 <Card.Body className="p-5">
-                  <h2 className="fw-bold text-center mb-4 ">User
-                    Login Account
+                  <h2 className="fw-bold text-center mb-4">
+                    User Login Account
                   </h2>
 
                   <Form onSubmit={handleSubmit}>

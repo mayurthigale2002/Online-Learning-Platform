@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import toast from "react-hot-toast";
@@ -14,7 +13,11 @@ const Admin = () => {
     password: "",
   });
 
-  // ✅ AOS Initialize
+  // Static Admin Credentials
+  const ADMIN_EMAIL = "admin@gmail.com";
+  const ADMIN_PASSWORD = "2098";
+
+  // AOS Initialize + Auto Redirect
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -22,9 +25,8 @@ const Admin = () => {
       easing: "ease-in-out",
     });
 
-    // ✅ Auto Redirect if already logged in
     const isAdmin = localStorage.getItem("isAdmin");
-    if (isAdmin) {
+    if (isAdmin === "true") {
       navigate("/adminpanel");
     }
   }, [navigate]);
@@ -34,27 +36,19 @@ const Admin = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    try {
-      const res = await axios.get("http://localhost:3000/admins");
-
-      const admin = res.data.find(
-        (user) =>
-          user.email === formData.email &&
-          user.password === formData.password
-      );
-
-      if (admin) {
-        localStorage.setItem("isAdmin", "true"); // ✅ Store Admin Session
-        toast.success("Admin Login Successful 🎉");
-        navigate("/adminpanel");
-      } else {
-        toast.error("Invalid Email or Password");
-      }
-    } catch (err) {
-      toast.error("Server Error");
+    //  Check Static Admin
+    if (
+      formData.email === ADMIN_EMAIL &&
+      formData.password === ADMIN_PASSWORD
+    ) {
+      localStorage.setItem("isAdmin", "true");
+      toast.success("Admin Login Successful 🎉");
+      navigate("/adminpanel");
+    } else {
+      toast.error("Invalid Admin Credentials ❌");
     }
   };
 
@@ -72,34 +66,30 @@ const Admin = () => {
       <Container fluid>
         <Row className="min-vh-100">
 
-          {/* 🔹 LEFT SIDE IMAGE */}
+          {/* LEFT SIDE IMAGE */}
           <Col
             lg={6}
             data-aos="fade-right"
             className="d-none d-lg-flex align-items-center justify-content-center text-white"
           >
-            <div className="text-center px-4">
+            <div className="text-center px-4 mt-4">
               <img
                 src="https://thumbs.dreamstime.com/b/admin-message-working-office-table-background-93379017.jpg"
                 alt="Admin"
                 className="img-fluid rounded-4 shadow-lg mb-4"
-                style={{ maxHeight: "420px", objectFit: "cover" }}
+                style={{ maxHeight: "350px", objectFit: "cover" }}
               />
-              <h4 className="fw-bold">Admin Dashboard Access</h4>
-              <p className="opacity-75">
-                Manage courses, users, enrollments and analytics efficiently.
-              </p>
             </div>
           </Col>
 
-          {/* 🔹 RIGHT SIDE LOGIN FORM */}
+          {/* LOGIN FORM */}
           <Col
             lg={6}
             data-aos="fade-left"
-            className="d-flex align-items-center justify-content-center"
+            className="d-flex align-items-center  justify-content-center"
           >
             <Card
-              className="shadow-lg border-0 glass-card"
+              className="shadow-lg border-0"
               style={{
                 width: "100%",
                 maxWidth: "450px",
@@ -118,19 +108,19 @@ const Admin = () => {
                 </div>
 
                 <Form onSubmit={handleSubmit}>
-                  <Form.Group className="mb-3" data-aos="fade-up" data-aos-delay="100">
+                  <Form.Group className="mb-3">
                     <Form.Control
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="admin@example.com"
+                      placeholder="admin@gmail.com"
                       className="rounded-pill px-3 py-2"
                       required
                     />
                   </Form.Group>
 
-                  <Form.Group className="mb-4" data-aos="fade-up" data-aos-delay="200">
+                  <Form.Group className="mb-4">
                     <Form.Control
                       type="password"
                       name="password"
@@ -144,9 +134,7 @@ const Admin = () => {
 
                   <Button
                     type="submit"
-                    className="w-100 rounded-pill fw-bold py-2 login-btn"
-                    data-aos="zoom-in"
-                    data-aos-delay="300"
+                    className="w-100 rounded-pill fw-bold py-2"
                   >
                     Login as Admin
                   </Button>

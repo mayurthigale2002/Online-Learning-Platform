@@ -9,6 +9,8 @@ import "aos/dist/aos.css";
 const Signup = () => {
   const navigate = useNavigate();
 
+  const BASE_URL = "https://698c204a21a248a273608bc4.mockapi.io/users";
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,7 +18,6 @@ const Signup = () => {
     password: "",
   });
 
-  // 🔥 Initialize AOS
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -31,21 +32,48 @@ const Signup = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+
     try {
-      await axios.post("http://localhost:3000/posts", formData);
-      setFormData({ name: "", email: "", mobile: "", password: "" });
-      toast.success("Signup Successfully..! 🎉");
+      // 1️⃣ Get all users
+      const res = await axios.get(
+        "https://698c204a21a248a273608bc4.mockapi.io/users",
+      );
+
+      // 2️⃣ Check duplicate email manually
+      const existingUser = res.data.find(
+        (user) => user.email === formData.email,
+      );
+
+      if (existingUser) {
+        toast.error("Email already registered ❌");
+        return;
+      }
+
+      // 3️⃣ Create new user
+      await axios.post(
+        "https://698c204a21a248a273608bc4.mockapi.io/users",
+        formData,
+      );
+
+      toast.success("Account created successfully 🎉");
+
+      setFormData({
+        name: "",
+        email: "",
+        mobile: "",
+        password: "",
+      });
+
       navigate("/login");
-    } catch (err) {
-      toast.error("Something went wrong");
+    } catch (error) {
+      console.log("Signup Error:", error);
+      toast.error("Something went wrong ❌");
     }
   };
 
   return (
     <Container fluid className="min-vh-100" style={{ marginTop: "70px" }}>
       <Row className="min-vh-100">
-
-        {/* 🔹 LEFT SIDE IMAGE */}
         <Col
           lg={6}
           data-aos="fade-right"
@@ -68,7 +96,6 @@ const Signup = () => {
           </div>
         </Col>
 
-        {/* 🔹 RIGHT SIDE FORM */}
         <Col
           lg={6}
           data-aos="fade-left"
@@ -88,11 +115,7 @@ const Signup = () => {
               </h2>
 
               <Form onSubmit={submitHandler}>
-                <Form.Group
-                  className="mb-3"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
+                <Form.Group className="mb-3">
                   <Form.Label>Name</Form.Label>
                   <Form.Control
                     type="text"
@@ -104,12 +127,8 @@ const Signup = () => {
                   />
                 </Form.Group>
 
-                <Form.Group
-                  className="mb-3"
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                >
-                  <Form.Label>Email address</Form.Label>
+                <Form.Group className="mb-3">
+                  <Form.Label>Email</Form.Label>
                   <Form.Control
                     type="email"
                     placeholder="Enter email"
@@ -120,11 +139,7 @@ const Signup = () => {
                   />
                 </Form.Group>
 
-                <Form.Group
-                  className="mb-3"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                >
+                <Form.Group className="mb-3">
                   <Form.Label>Mobile No.</Form.Label>
                   <Form.Control
                     type="tel"
@@ -136,11 +151,7 @@ const Signup = () => {
                   />
                 </Form.Group>
 
-                <Form.Group
-                  className="mb-4"
-                  data-aos="fade-up"
-                  data-aos-delay="400"
-                >
+                <Form.Group className="mb-4">
                   <Form.Label>Password</Form.Label>
                   <Form.Control
                     type="password"
@@ -156,12 +167,9 @@ const Signup = () => {
                   type="submit"
                   className="w-100 fw-semibold py-2 rounded-pill"
                   style={{
-                    background:
-                      "linear-gradient(90deg, #667eea, #764ba2)",
+                    background: "linear-gradient(90deg, #667eea, #764ba2)",
                     border: "none",
                   }}
-                  data-aos="zoom-in"
-                  data-aos-delay="500"
                 >
                   Sign Up
                 </Button>
