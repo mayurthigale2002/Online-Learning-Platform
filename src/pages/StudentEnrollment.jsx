@@ -20,15 +20,33 @@ const StudentEnrollment = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await axios.post("http://localhost:3000/enrollments", formData);
-      toast.success("Enrollment Successful 🎉");
-      navigate("/coursevideo");
-    } catch {
-      toast.error("Server error");
-    }
-  };
+  e.preventDefault();
+
+  try {
+    const response = await axios.post(
+      "https://698c204a21a248a273608bc4.mockapi.io/users",
+      formData
+    );
+
+    console.log("Saved Data:", response.data);
+
+    toast.success("Enrollment Successful 🎉");
+
+    // Clear form after submit
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      level: "",
+    });
+
+    navigate("/coursevideo");
+
+  } catch (error) {
+    console.error("Error:", error);
+    toast.error("Server error");
+  }
+};
 
   return (
   <Container
